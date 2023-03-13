@@ -1,0 +1,32 @@
+{
+  "name": "tech-blog-mvc",
+  "version": "1.0.0",
+  "description": "Model View Controller of Tech Blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adzy89/mvcblog.git"
+  },
+  "homepage": "https://https://github.com/Adzy89/mvcblog.git",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21",
+    "seed": "^0.4.4",
+    "seeds": "^2.3.1",
+    "sequelize": "^6.29.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

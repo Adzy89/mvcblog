@@ -1,29 +1,21 @@
 [
     {
         "username": "mark_wahlberg",
-        "twitter": "markemark",
-        "github": "markwall",
         "email": "markw@gmail.com",
         "password": "password"
     },
     {
         "username": "matt_damon",
-        "twitter": "mattdee",
-        "github": "mattdamon1",
         "email": "mattd@gmail.com",
         "password": "password"
     },
     {
         "username": "nick_cage",
-        "twitter": "ncage",
-        "github": "nickcagedit",
         "email": "nickcgmail.com",
         "password": "password"
     },
     {
         "username": "bill_gates",
-        "twitter": "billyoung",
-        "github": "bgates",
         "email": "billg@gmail.com",
         "password": "password'"
     }

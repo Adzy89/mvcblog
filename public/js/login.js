@@ -7,7 +7,7 @@ async function loginFormHandler (event){
   
     if (email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/userRoutes/login', {
         method: 'post',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },

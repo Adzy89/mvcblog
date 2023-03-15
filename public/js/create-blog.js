@@ -4,7 +4,7 @@ console.log('create blog')
     const title = document.querySelector('input[name="blog-title"]').value;
     const content = document.querySelector('textarea[name="blog-content"]').value;
 
-    const response = await fetch(`/api/blogs`, {
+    const response = await fetch(`/api/blogRoutes`, {
         method: 'POST',
         body: JSON.stringify({
             title,

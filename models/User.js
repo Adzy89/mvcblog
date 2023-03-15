@@ -32,34 +32,26 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3]
+        len: [8]
       },
-    },
-    github: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    twitter: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    }
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.password = await bcrypt.hash(newUserData.password, 8);
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
-          10
+          8
         );
         return updatedUserData;
       },
     },
     sequelize,
-    // timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',

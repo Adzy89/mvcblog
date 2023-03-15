@@ -8,16 +8,19 @@
         "username": "matt_damon",
         "email": "mattd@gmail.com",
         "password": "password"
+        
     },
     {
         "username": "nick_cage",
         "email": "nickcgmail.com",
         "password": "password"
+      
     },
     {
         "username": "bill_gates",
         "email": "billg@gmail.com",
-        "password": "password'"
+        "password": "password"
+      
     }
 ]
 

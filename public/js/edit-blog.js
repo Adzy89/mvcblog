@@ -5,7 +5,7 @@ async function editFormHandler(event){
     const content = document.querySelector('textarea[name="blog-content"]').value;
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-    const response = await fetch(`/api/blogs/${id}`, {
+    const response = await fetch(`/api/blogRoutes/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,

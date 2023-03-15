@@ -24,12 +24,12 @@ router.get('/', withAuth, async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['username']
           }
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['username']
         },
       ],
     });
@@ -68,12 +68,12 @@ router.get('/edit/:id', withAuth, async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username'],
         },
       ],
     });
@@ -113,12 +113,12 @@ router.get('/create/', withAuth, async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username'],
         },
       ],
     });

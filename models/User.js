@@ -32,20 +32,28 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8]
+        len: [3]
       },
-    }
+    },
+    github: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    twitter: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 8);
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
-          8
+          10
         );
         return updatedUserData;
       },

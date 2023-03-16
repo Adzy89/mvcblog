@@ -1,3 +1,4 @@
+
 const { Blog } = require ('../models');
 const blogData = 
 [
@@ -16,9 +17,17 @@ const blogData =
     content: "OK, you made into bootcamp now how to survive. I have listed 3 main category's that will help any new student get through the rigors of boot camp, 1. Time, 2. Curiosity, 3.Drive",
     user_id: 2
   },
- 
+  {
+    title: "How to use Node.js",
+    content: "The documentation wil tell you to instal npm in your terminal, But there are many features to npm",
+    user_id: 5
+  },
+  {
+    title: "Dev Ops another mystery",
+    content: "Dev Ops got you down? Don't worry we have you back on how to navigate the Dev Ops",
+    user_id: 4
+  }
 ]
+ const seedBlogs = () => Blog.bulkCreate(blogData);
 
-const seedBlogs = () => Blog.bulkCreate(blogData);
-
-module.exports = seedBlogs
+ module.exports = seedBlogs

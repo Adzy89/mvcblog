@@ -3,12 +3,12 @@ const sequelize = require('../config/connection');
 const { Blog, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// FIND ALL BLOGS AND JOIN WITH COMMENT & USER ATTRIBUTES
+
 router.get('/', async (req, res) => {
   try {
     console.log(req.session);
     const blogData = await Blog.findAll({
-      attributes: ['id', 'title', 'created_at', 'content'],
+      attributes: ['id', 'title', 'content','created_at',],
       include: [
         {
           model: Comment,
@@ -31,11 +31,11 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data in array so the template can read it
+   
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
+  
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
@@ -45,10 +45,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-// LOGIN
+
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  // This is the withAuth spelled out
+
   console.log(req.session);
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -57,7 +56,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// SIGNUP
+
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -100,10 +99,10 @@ router.get('/blogs/:id', async (req, res) => {
       return;
     }
 
-    // serialize the data
+
     const blog = blogData.get({ plain: true });
 
-    // pass data to template
+   
     res.render('single-comment', {
       blog,
       loggedIn: req.session.loggedIn,

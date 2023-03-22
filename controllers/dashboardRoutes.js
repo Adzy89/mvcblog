@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
      
         user_id: req.session.user_id,
       },
-      attributes: ['id', 'title', 'content', 'created_at'],
+      attributes: ['id', 'title', 'created_at','content' ],
       include: [
         {
           model: Comment,

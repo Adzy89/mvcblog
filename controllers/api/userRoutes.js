@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Blog, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET api/users -- Find all users attributes
+// GET
 
 router.get('/', async (req, res) => {
   try {
@@ -16,8 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET ap/users/id -- Find a user by id
-// with references to users blogs, comments, and comments on a blog title
+
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -54,7 +53,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
-      // User inputs info at sign up page
+     
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -63,9 +62,9 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      // I think the user_id is generated no user input needed
+     
       req.session.user_id = userData.id;
-      // All user inputs saved
+      
       req.session.username = userData.username;
       req.session.github = userData.github;
       req.session.twitter = userData.twitter;
@@ -104,9 +103,9 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      // I think the user_id is generated no user input needed
+    
       req.session.user_id = userData.id;
-      // All user inputs saved
+     
       req.session.username = userData.username;
       req.session.github = userData.github;
       req.session.twitter = userData.twitter;
@@ -120,12 +119,11 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// UPDATE -- /api/users/1
+// UPDATE 
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const userData = User.update(req.body, {
-      // Will select records that are about to be updated and
-      //  emit before- + after- Update on each instance
+    
       individualHooks: true,
       where: {
         id: req.params.id,

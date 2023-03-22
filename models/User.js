@@ -34,16 +34,8 @@ User.init(
       validate: {
         len: [3]
       },
-    },
-    github: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    twitter: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
+},
   {
     hooks: {
       beforeCreate: async (newUserData) => {

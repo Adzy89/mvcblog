@@ -21,12 +21,12 @@ router.get('/', async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username'],
         },
       ],
     });
@@ -85,12 +85,12 @@ router.get('/blogs/:id', async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['username', 'github', 'twitter'],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ['username', 'github', 'twitter'],
+          attributes: ['username'],
         },
       ],
     });
@@ -99,10 +99,8 @@ router.get('/blogs/:id', async (req, res) => {
       return;
     }
 
-
     const blog = blogData.get({ plain: true });
 
-   
     res.render('single-comment', {
       blog,
       loggedIn: req.session.loggedIn,
